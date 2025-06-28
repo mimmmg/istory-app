@@ -62,9 +62,3 @@ resource "aws_route_table_association" "dangtong-vpc-public-rt" {
   subnet_id      = each.value
   route_table_id = aws_route_table.dangtong-vpc-public-rt.id
 }
-data "aws_vpc" "dangtong-vpc" {
-  filter {
-    name   = "tag:Name"
-    values = ["dangtong-vpc"]
-  }
-}
